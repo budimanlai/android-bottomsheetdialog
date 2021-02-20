@@ -1,6 +1,7 @@
 # Bottom Sheet Dialog
 
 Example:
+
 ![Example](https://budimanlai.com/d/ezgif.com-gif-maker.gif "Example")
 
 
@@ -8,17 +9,18 @@ Example:
 ### How to use
 
 Step 1: Add it in your root build.gradle at the end of repositories:
-```json
+
+```
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 
 Step 2: Add the dependency
-```json
+```
 dependencies {
 	implementation 'com.github.budimanlai:android-bottomsheetdialog:1.0'
 }
