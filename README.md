@@ -1,12 +1,32 @@
 # Bottom Sheet Dialog
 
 Example:
-
 ![Example](https://budimanlai.com/d/ezgif.com-gif-maker.gif "Example")
 
 
 ------------
 ### How to use
+
+Step 1: Add it in your root build.gradle at the end of repositories:
+```json
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+Step 2: Add the dependency
+```json
+dependencies {
+	implementation 'com.github.budimanlai:android-bottomsheetdialog:1.0'
+}
+```
+
+
+------------
+### Example
 
 Example dialog1:
 ```java
@@ -99,7 +119,7 @@ final Button btnDialog1 = findViewById(R.id.btnDialog4);
 btnDialog1.setOnClickListener(v -> bottomDialog.show());
 ```
 
-Example Dialog 5:
+#####Example Dialog 5:
 ```xml
 <!-- R.layout.payment_form -->
 <?xml version="1.0" encoding="utf-8"?>
