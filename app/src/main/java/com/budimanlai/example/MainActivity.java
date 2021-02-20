@@ -30,9 +30,12 @@ public class MainActivity extends AppCompatActivity {
     private void initDialog1() {
         final BottomListSheet bottomDialog = BottomListSheet.build(this);
         bottomDialog.setTitle(getString(R.string.dialog_1_button));
-        bottomDialog.setOnClickListener((label, index) -> {
-            bottomDialog.dismiss();
-            Toast.makeText(MainActivity.this, label, Toast.LENGTH_LONG).show();
+        bottomDialog.setOnClickListener(new BottomListSheet.OnClickListener() {
+            @Override
+            public void OnClicked(String label, int index) {
+                bottomDialog.dismiss();
+                Toast.makeText(MainActivity.this, label, Toast.LENGTH_LONG).show();
+            }
         });
         bottomDialog.add("Apple");
         bottomDialog.add("Orange");
@@ -41,14 +44,22 @@ public class MainActivity extends AppCompatActivity {
         bottomDialog.add("Chocolate");
 
         final Button btnDialog1 = findViewById(R.id.btnDialog1);
-        btnDialog1.setOnClickListener(v -> bottomDialog.show());
+        btnDialog1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomDialog.show();
+            }
+        });
     }
 
     private void initDialog2() {
         final BottomListSheet bottomDialog = BottomListSheet.build(this);
-        bottomDialog.setOnClickListener((label, index) -> {
-            bottomDialog.dismiss();
-            Toast.makeText(MainActivity.this, label, Toast.LENGTH_LONG).show();
+        bottomDialog.setOnClickListener(new BottomListSheet.OnClickListener() {
+            @Override
+            public void OnClicked(String label, int index) {
+                bottomDialog.dismiss();
+                Toast.makeText(MainActivity.this, label, Toast.LENGTH_LONG).show();
+            }
         });
 
         ArrayList<String> socialMedia = new ArrayList<>();
@@ -65,14 +76,22 @@ public class MainActivity extends AppCompatActivity {
         bottomDialog.addAll(socialMedia);
 
         final Button btnDialog2 = findViewById(R.id.btnDialog2);
-        btnDialog2.setOnClickListener(v -> bottomDialog.show());
+        btnDialog2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomDialog.show();
+            }
+        });
     }
 
     private void initDialog3() {
         final BottomListSheet bottomDialog = BottomListSheet.build(this);
-        bottomDialog.setOnClickListener((label, index) -> {
-            bottomDialog.dismiss();
-            Toast.makeText(MainActivity.this, label, Toast.LENGTH_LONG).show();
+        bottomDialog.setOnClickListener(new BottomListSheet.OnClickListener() {
+            @Override
+            public void OnClicked(String label, int index) {
+                bottomDialog.dismiss();
+                Toast.makeText(MainActivity.this, label, Toast.LENGTH_LONG).show();
+            }
         });
 
         ArrayList<String> socialMedia = new ArrayList<>();
@@ -88,21 +107,32 @@ public class MainActivity extends AppCompatActivity {
         bottomDialog.setDescription(getString(R.string.dialog_3_description));
         bottomDialog.addAll(socialMedia);
         bottomDialog.showCancel(true);
-        bottomDialog.setOnCancelClickListener(v -> {
-            bottomDialog.dismiss();
-            Toast.makeText(MainActivity.this, "Cancel triggered", Toast.LENGTH_LONG).show();
+        bottomDialog.setOnCancelClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomDialog.dismiss();
+                Toast.makeText(MainActivity.this, "Cancel triggered", Toast.LENGTH_LONG).show();
+            }
         });
 
         final Button btnDialog2 = findViewById(R.id.btnDialog3);
-        btnDialog2.setOnClickListener(v -> bottomDialog.show());
+        btnDialog2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomDialog.show();
+            }
+        });
     }
 
     private void initDialog4() {
         final BottomListSheet bottomDialog = BottomListSheet.build(this, R.layout.dialog_custom);
         bottomDialog.setTitle(getString(R.string.dialog_4_button));
-        bottomDialog.setOnClickListener((label, index) -> {
-            bottomDialog.dismiss();
-            Toast.makeText(MainActivity.this, label, Toast.LENGTH_LONG).show();
+        bottomDialog.setOnClickListener(new BottomListSheet.OnClickListener() {
+            @Override
+            public void OnClicked(String label, int index) {
+                bottomDialog.dismiss();
+                Toast.makeText(MainActivity.this, label, Toast.LENGTH_LONG).show();
+            }
         });
         bottomDialog.add("Apple");
         bottomDialog.add("Orange");
@@ -111,7 +141,12 @@ public class MainActivity extends AppCompatActivity {
         bottomDialog.add("Chocolate");
 
         final Button btnDialog1 = findViewById(R.id.btnDialog4);
-        btnDialog1.setOnClickListener(v -> bottomDialog.show());
+        btnDialog1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomDialog.show();
+            }
+        });
     }
 
     private void initDialog5() {
@@ -122,17 +157,33 @@ public class MainActivity extends AppCompatActivity {
         final Button btnCancel = view.findViewById(R.id.btnCancel);
         final Button btnPay = view.findViewById(R.id.btnPay);
 
-        btnCancel.setOnClickListener(v -> bottomDialog.dismiss());
-
-        btnPay.setOnClickListener(v -> {
-            bottomDialog.showLoading();
-            new Handler().postDelayed(() -> {
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 bottomDialog.dismiss();
-                Toast.makeText(MainActivity.this, "Payment success", Toast.LENGTH_LONG).show();
-            }, 3000);
+            }
+        });
+
+        btnPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomDialog.showLoading();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        bottomDialog.dismiss();
+                        Toast.makeText(MainActivity.this, "Payment success", Toast.LENGTH_LONG).show();
+                    }
+                }, 3000);
+            }
         });
 
         final Button btnDialog = findViewById(R.id.btnDialog5);
-        btnDialog.setOnClickListener(v -> bottomDialog.show());
+        btnDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomDialog.show();
+            }
+        });
     }
 }

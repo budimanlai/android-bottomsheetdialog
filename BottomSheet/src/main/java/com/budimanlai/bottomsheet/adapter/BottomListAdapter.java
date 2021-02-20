@@ -42,9 +42,12 @@ public class BottomListAdapter extends RecyclerView.Adapter<BottomListAdapter.My
         final String label = this.mItems.get(position);
         holder.txtTitle.setText(label);
 
-        holder.itemView.setOnClickListener(v -> {
-            if (mListener != null) {
-                mListener.OnClicked(label, position);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null) {
+                    mListener.OnClicked(label, position);
+                }
             }
         });
     }

@@ -50,9 +50,12 @@ public class BottomListSheet extends BottomSheet {
         btnCancel = view.findViewById(R.id.btnCancel);
 
         mItems = new ArrayList<>();
-        mAdapter = new BottomListAdapter(mItems, (label, index) -> {
-            if (mListener != null) {
-                mListener.OnClicked(label, index);
+        mAdapter = new BottomListAdapter(mItems, new OnClickListener() {
+            @Override
+            public void OnClicked(String label, int index) {
+                if (mListener != null) {
+                    mListener.OnClicked(label, index);
+                }
             }
         });
 
