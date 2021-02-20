@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Bottom Dialog Sheet</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </string>
+
+    <string name="dialog_1">Bottom sheet dialog with string list</string>
+    <string name="dialog_1_button">Dialog 1</string>
+
+    <string name="dialog_2">Bottom sheet dialog with string list and description</string>
+    <string name="dialog_2_button">Dialog 2</string>
+    <string name="dialog_2_description">Which one your favorite social media?</string>
+
+    <string name="dialog_3">Bottom sheet dialog with cancel button</string>
+    <string name="dialog_3_button">Dialog 3</string>
+    <string name="dialog_3_description">Which one your favorite social media?</string>
+
+    <string name="dialog_4">Bottom sheet dialog with custom layout</string>
+    <string name="dialog_4_button">Dialog 4</string>
+
+    <string name="dialog_5">Bottom sheet dialog with progress bar</string>
+    <string name="dialog_5_button">Dialog 5</string>
+    <string name="dialog_5_payment">Payment</string>
+    <string name="dialog_5_text">Please choose your payment method</string>
+    <string name="dialog_5_total">Total: $50.00</string>
+    <string name="dialog_5_transfer">Transfer</string>
+    <string name="dialog_5_cc">Credit Card</string>
+    <string name="pay">Pay</string>
+</resources>

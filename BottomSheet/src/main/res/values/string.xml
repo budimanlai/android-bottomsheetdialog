@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_title">Bottom Sheet Title</string>
+    <string name="dialog_loading_text">Please wait</string>
+    <string name="dialog_description">This is bottom sheet description</string>
+    <string name="cancel">Cancel</string>
+</resources>
