@@ -33,7 +33,7 @@ public class BottomListAdapter extends RecyclerView.Adapter<BottomListAdapter.My
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.rv_simple_row, parent, false);
+        View view = layoutInflater.inflate(R.layout.bs_simple_row, parent, false);
         return new MyViewHolder(view);
     }
 

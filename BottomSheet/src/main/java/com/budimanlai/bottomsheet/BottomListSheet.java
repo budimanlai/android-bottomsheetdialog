@@ -1,10 +1,10 @@
 package com.budimanlai.bottomsheet;
 
-import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,21 +21,21 @@ public class BottomListSheet extends BottomSheet {
     private TextView txtDescription;
     private Button btnCancel;
 
-    public BottomListSheet(Context context) {
-        super(context);
+    public BottomListSheet(AppCompatActivity a) {
+        super(a);
     }
-    public BottomListSheet(Context context, int layout) {
-        super(context, layout);
+    public BottomListSheet(AppCompatActivity a, int layout) {
+        super(a, layout);
     }
 
-    public static BottomListSheet build(Context context) {
-        BottomListSheet dialog = new BottomListSheet(context);
+    public static BottomListSheet build(AppCompatActivity a) {
+        BottomListSheet dialog = new BottomListSheet(a);
         dialog.initLayout();
         return dialog;
     }
 
-    public static BottomListSheet build(Context context, int layout) {
-        BottomListSheet dialog = new BottomListSheet(context, layout);
+    public static BottomListSheet build(AppCompatActivity a, int layout) {
+        BottomListSheet dialog = new BottomListSheet(a, layout);
         dialog.initLayout();
         return dialog;
     }
@@ -45,7 +45,7 @@ public class BottomListSheet extends BottomSheet {
     }
 
     public void initLayout() {
-        View view = getContentView(R.layout.dialog_list);
+        View view = getContentView(R.layout.bs_dialog_list);
         txtDescription = view.findViewById(R.id.txtDescription);
         btnCancel = view.findViewById(R.id.btnCancel);
 
@@ -60,7 +60,7 @@ public class BottomListSheet extends BottomSheet {
         });
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(activity);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mAdapter);
 

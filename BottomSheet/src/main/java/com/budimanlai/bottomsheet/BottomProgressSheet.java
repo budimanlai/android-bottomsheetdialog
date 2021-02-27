@@ -1,26 +1,27 @@
 package com.budimanlai.bottomsheet;
 
-import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class BottomProgressSheet extends BottomSheet {
 
     protected View loadingView;
     protected TextView loadingText;
 
-    public BottomProgressSheet(Context context, int dialog_layout) {
-        super(context, dialog_layout);
+    public BottomProgressSheet(AppCompatActivity activity, int dialog_layout) {
+        super(activity, dialog_layout);
     }
 
-    public static BottomProgressSheet build(Context context) {
-        BottomProgressSheet dialog = new BottomProgressSheet(context, R.layout.dialog_progress_container);
+    public static BottomProgressSheet build(AppCompatActivity activity) {
+        BottomProgressSheet dialog = new BottomProgressSheet(activity, R.layout.bs_dialog_progress_container);
         dialog.initLayout();
         return dialog;
     }
 
-    public static BottomProgressSheet build(Context context, int layout) {
-        BottomProgressSheet dialog = new BottomProgressSheet(context, layout);
+    public static BottomProgressSheet build(AppCompatActivity activity, int layout) {
+        BottomProgressSheet dialog = new BottomProgressSheet(activity, layout);
         dialog.initLayout();
         return dialog;
     }
