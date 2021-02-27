@@ -22,7 +22,7 @@ allprojects {
 Step 2: Add the dependency
 ```
 dependencies {
-	implementation 'com.github.budimanlai:android-bottomsheetdialog:1.0'
+	implementation 'com.github.budimanlai:android-bottomsheetdialog:1.2'
 }
 ```
 
